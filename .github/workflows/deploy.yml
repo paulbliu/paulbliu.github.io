@@ -5,7 +5,7 @@ on:
     branches:
       - main
   repository_dispatch:
-    types: [vault-update]
+    types: [vault-updated]
 
 permissions:
   contents: read
