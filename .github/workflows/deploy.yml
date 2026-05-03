@@ -22,21 +22,11 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout site repo
-        uses: actions/checkout@v4
-
-      - name: Checkout vault
+      - name: Checkout DCA vault repo
         uses: actions/checkout@v4
         with:
           repository: paulbliu/dca-vault
-          path: vault
-
-      - name: Copy vault to content
-        run: |
-          rm -rf content
-          mkdir content
-          cp -r vault/* content/
-          rm -rf content/.obsidian content/Templates content/private
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
